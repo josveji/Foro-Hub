@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
-@Table(name = "Respuestas")
+@Table(name = "respuestas")
 @Entity(name = "Respuesta")
 @Getter
 @NoArgsConstructor
@@ -39,14 +39,12 @@ public class Respuesta {
     @JoinColumn(name = "autor_id")
     private Usuario autor;
 
-//    public Respuesta(DatosCrearRespuesta datosCrearRespuesta, UsuarioRepository usuarioRepository){
-//        if (usuarioRepository.findById(datosCrearRespuesta.idAutor()).isPresent()){
-//            this.mensaje = datosCrearRespuesta.mensaje();
-//            this.fechaCreacion = datosCrearRespuesta.fechaCreacion();
-//            this.solucion = datosCrearRespuesta.solucion();
-//            this.autor = new Usuario (usuarioRepository.findById(datosCrearRespuesta.idAutor()));
-//        }
-//        return;;
-//    }
+    public Respuesta(DatosCrearRespuesta datosCrearRespuesta, Usuario usuario, Topico topico){
+            this.mensaje = datosCrearRespuesta.mensaje();
+            this.fechaCreacion = datosCrearRespuesta.fechaCreacion();
+            this.solucion = datosCrearRespuesta.solucion();
+            this.autor = usuario;
+            this.topico = topico;
+    }
 
 }

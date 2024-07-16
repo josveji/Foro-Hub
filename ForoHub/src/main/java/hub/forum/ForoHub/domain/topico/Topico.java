@@ -46,4 +46,21 @@ public class Topico {
     @JoinColumn(name = "curso_id")
     private Curso curso;
 
+    // Crear topico de cero
+    public Topico(DatosCrearTopico datosCrearTopico, Usuario usuario, Curso curso){
+        this.titulo = datosCrearTopico.titulo();
+        this.mensaje = datosCrearTopico.mensaje();
+        this.fechaCreacion = datosCrearTopico.fechaCreacion();
+        this.status = true;
+        this.autor = usuario;
+        this.curso = curso;
+    }
+
+    // Desactivar Topico
+    public void desactivarTopico(){
+        this.status = false;
+    }
+
+    // Getters
+
 }

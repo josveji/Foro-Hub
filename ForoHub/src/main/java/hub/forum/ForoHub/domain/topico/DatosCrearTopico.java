@@ -20,9 +20,7 @@ public record DatosCrearTopico(
         @NotNull
         LocalDate fechaCreacion,
         @NotNull
-        Boolean status,
-        @NotNull
-        Curso curso
+        Long idCurso
 
 ) {
 }

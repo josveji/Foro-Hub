@@ -27,7 +27,7 @@ public class Usuario {
     private String correoElectronico;
     private String contrasena;
 
-    // Delgados - Perfil
+    // Delgados - Perfil (Analizar añadido de perfil)
     @OneToMany(mappedBy = "usuario")
     private List<Perfil> perfiles;
 
